@@ -67,9 +67,13 @@ public class DatabaseManager {
      *
      * @param username the username for the new account
      * @param password the password for the new account
-     * @return true if registration successful, false if username already exists
+     * @return true if registration successful, false if credentials are blank or the username already exists
      */
     public boolean signupUser(String username, String password) {
+        if (username == null || username.isBlank() || password == null || password.isBlank()) {
+            return false;
+        }
+
         try (PreparedStatement ps = conn.prepareStatement("INSERT INTO users(username, password) VALUES (?, ?)")) {
             ps.setString(1, username);
             ps.setString(2, password);

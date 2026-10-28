@@ -234,6 +234,11 @@ public class UIManager {
      * @param password the desired password
      */
     private void signupUser(Stage stage, String username, String password) {
+        if (username == null || username.isBlank() || password == null || password.isBlank()) {
+            showAlert("Signup Failed", "Enter a username and password. Neither field can be blank.");
+            return;
+        }
+
         if (mainApp.getDbManager().signupUser(username, password)) {
             mainApp.setCurrentUser(username);
             mainApp.setCurrentLevel(1);
