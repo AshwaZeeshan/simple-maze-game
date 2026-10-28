@@ -52,6 +52,5 @@ pom.xml                Maven dependencies and launch configuration
 This is an educational desktop project. Its local login system stores passwords in plain text and is intended only for demonstration; use a disposable password. Existing account data and generated build files are excluded from this repository.
 
 ## Authors
-
 - Shifa Zeeshan
-- Mahnoor Khan
+- Mahnoor Khan 
